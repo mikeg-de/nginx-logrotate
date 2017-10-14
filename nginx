@@ -1,0 +1,41 @@
+/var/log/nginx/*log {
+        weekly
+        missingok
+        rotate 4
+        compress
+        delaycompress
+        notifempty
+        create 0640 root adm
+
+        # If not commended pre- and postrotate scripts are shared between each iteration, thus only been executed once
+        #sharedscripts
+
+        # Default and overwrites sharedscripts. Scripts in pre- and postrotate are executed during each iteration of logrotate
+        nosharedscripts
+
+        # Do not max out, keep at ca. half the max email size
+        maxsize 25M
+        mail YOUR@EMAIL
+        mailfirst
+
+        # Executed only once before all log files that match pattern are rotated, before postrotate and only if at least one log was rotated
+        firstaction
+                [ ! -f /run/nginx.pid ] || kill -USR1 `cat /run/nginx.pid`
+        endscript
+
+        # Executed before each and only if file is rotated. Bot commands sharedscripts / nosharedscripts are taken into account
+        prerotate
+                # Upload log file which is currently been roated to AWS S3
+                /home/ubuntu/upload-log-s3.sh $1
+        endscript
+
+        # Executed after each and only if file is rotated. Bot commands sharedscripts / nosharedscripts are taken into account
+        #postrotate
+        #endscript
+
+        # Executed only once after all log files that match pattern are rotated, after postrotate and only if at least one log was rotated
+        lastaction
+                service nginx reload
+                fail2ban-client set logtarget /var/log/fail2ban.log >/dev/null
+        endscript
+}

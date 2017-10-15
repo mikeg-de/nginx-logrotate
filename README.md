@@ -53,5 +53,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 * [Logrotate Manual](https://linuxconfig.org/logrotate-8-manual-page) for details about logrotate commands
 * [Yasith Fernando](http://ghost.thekindof.me/setting-up-centralized-logging-to-s3-with-logrotated/)
-* [](https://www.lustforge.com/2012/07/15/logrotate-apache-logs-to-amazon-s3/)
 * [Dowd and Associates](http://www.dowdandassociates.com/blog/content/howto-rotate-logs-to-s3/)

@@ -12,7 +12,7 @@ file="$file"
 
 BUCKET_NAME="ubunut-elb-logs"
 # Time stamp and instance id for bucket sub-folders
-timestamp=$(date +"%Y%m%d-%H%M%S")
+timestamp=$(date +"%Y%m%d-%H%M")
 # Dynamically retreive instance ID and replace i- with nothing
 EC2_INSTANCE_ID="`wget -q -O - http://instance-data/latest/meta-data/instance-id | sed -e s/i-//`"
 

@@ -14,7 +14,7 @@
         nosharedscripts
 
         # Do not max out, keep at ca. half the max email size
-        maxsize 25M
+        maxsize 5M
         mail YOUR@EMAIL
         mailfirst
 
@@ -30,8 +30,8 @@
         endscript
 
         # Executed after each and only if file is rotated. Bot commands sharedscripts / nosharedscripts are taken into account
-        #postrotate
-        #endscript
+#        postrotate
+#        endscript
 
         # Executed only once after all log files that match pattern are rotated, after postrotate and only if at least one log was rotated
         lastaction

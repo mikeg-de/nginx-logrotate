@@ -45,7 +45,7 @@ Suggestions welcome!
 ## Authors
 **Mike Wiegand** - [atMedia Online Marketing](https://atmedia-marketing.com)
 
-See also the list of [Acknowledgments](#Acknowledgments) where their work greatly contributed to this project.
+See also the list of [Acknowledgments](#acknowledgments) where their work greatly contributed to this project.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

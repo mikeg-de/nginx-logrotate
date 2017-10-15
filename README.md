@@ -37,6 +37,7 @@ Solution: Replace IP of server with generic address "instance-data"
 0.2 Current Release
 * Removed seconds from S3 sub-folder for better overview
 * Updated readme
+
 0.1 Initialization
 
 ## To be done ##
